@@ -1,11 +1,13 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router();                                        // used to differentiate between routes and controller
 const homeController = require("../controllers/home_controller");
 
 console.log("Router Loaded");
 
 router.get("/", homeController.home);
-router.use("/users", require("./users"));
+router.use("/users", require('./user'));
+router.use("/contact", require("./contact"));
+                       
 
 // for any further routes, access from here
 // router.use("/routerName", require('./routerFile'));
