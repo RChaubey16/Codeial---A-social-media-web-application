@@ -48,6 +48,8 @@ app.use(passport.initialize());
 // initiializing session for usage
 app.use(passport.session());
 
+app.use(passport.setAuthenticatedUser);
+
 // use express router
 app.use('/', require("./routes/index"));                // also you can write require("./routes");
 
