@@ -1,0 +1,20 @@
+#layout-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: grey;
+  padding: 5px 10px;
+  color: white; }
+  #layout-footer a {
+    color: white;
+    text-decoration: none;
+    transition: all 450ms ease-in-out; }
+    #layout-footer a:hover {
+      color: #bdb7b7; }
+  #layout-footer .footer-nav ul {
+    display: flex;
+    list-style: none; }
+    #layout-footer .footer-nav ul li {
+      margin-left: 20px; }
