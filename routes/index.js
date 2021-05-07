@@ -6,6 +6,7 @@ console.log("Router Loaded");
 
 router.get("/", homeController.home);
 router.use("/users", require('./user'));
+router.use("/posts", require('./post'));
 router.use("/contact", require("./contact"));
                        
 
