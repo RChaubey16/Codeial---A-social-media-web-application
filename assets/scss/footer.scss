@@ -1,16 +1,17 @@
 #layout-footer{
-    position: fixed;
+    box-sizing: border-box;
+    position: relative;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background: grey;
+    background: #2b252c;
     padding: 5px 10px;
     color: white;
     a{
         color: white;
         text-decoration: none;
-        transition: all 450ms ease-in-out;
+        transition: all 250ms ease-in-out;
         &:hover{
             color: rgb(189, 183, 183);
         }

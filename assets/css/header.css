@@ -19,6 +19,6 @@
   #layout-header nav a {
     color: white;
     text-decoration: none;
-    transition: all 450ms ease-in-out; }
+    transition: all 250ms ease-in-out; }
     #layout-header nav a:hover {
       color: #bdb7b7; }
