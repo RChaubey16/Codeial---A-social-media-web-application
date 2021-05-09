@@ -5,9 +5,10 @@ const homeController = require("../controllers/home_controller");
 console.log("Router Loaded");
 
 router.get("/", homeController.home);
-router.use("/users", require('./user'));
 router.use("/posts", require('./post'));
+router.use("/users", require('./user'));
 router.use("/contact", require("./contact"));
+router.use('/comments', require('./comment'));
                        
 
 // for any further routes, access from here

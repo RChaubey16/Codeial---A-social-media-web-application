@@ -13,13 +13,16 @@ const postSchema = new mongoose.Schema({
         // takes the ObjectId of the logged in user who's making the post from the db 
         type: mongoose.Schema.Types.ObjectId,
         // takes the name of the Schema being followed by the user for other details
-        ref: 'user'
+        ref: 'User'
     },
 
-    comment: [{
+    // every post has alot of comments from the diff users, hence an array of comments made by diff users 
+    comments: [
+        {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'comment'
-    }]
+        }
+    ]
 },{
     timestamps: true
 });
