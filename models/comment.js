@@ -9,13 +9,13 @@ const commentSchema = new mongoose.Schema({
     // comments belong to a user
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
 
     // comments are made on a post
     post: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'post'
+        ref: 'Post'
     }
 }, {
     timestamps: true
