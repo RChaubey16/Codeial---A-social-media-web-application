@@ -3,7 +3,7 @@
 const Post = require("../models/post");
 const User = require("../models/user");
 
-module.exports.home = function(req, res){
+module.exports.home = async function(req, res){                     // aynchronous function
 
     // use of cookies and alteration of cookies in both browser and server. Just an example
     // console.log(req.cookies);
@@ -20,29 +20,28 @@ module.exports.home = function(req, res){
     // });
 
     // Populate the user of each post
-    Post.find({})
-    .populate('user')                                   // user who is posting the post 
-    .populate({
-        path: 'comments',
-        populate: {
-            path: 'user'                                // user who is commenting on the post
-        }
-    })
-    .exec(
 
+    try {
+        let posts = await Post.find({})                     // await the query
+        .populate('user')                                   // user who is posting the post 
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'user'                                // user who is commenting on the post
+            }
+        });
 
+        let users = await User.find({});                    // await the query
 
-        function (err, posts) {
+        return res.render('home', { 
+            title: "Codeial | Home",
+            posts: posts,
+            all_users: users
+        });
 
-            User.find({}, function (err, users) {
-                return res.render('home', { 
-                    title: "Codeial | Home",
-                    posts: posts,
-                    all_users: users
-                });
-            })
-
-        }
-    )
+    } catch (err) {
+        console.log("Error : ", err);
+        return;
+    }
 
 }
