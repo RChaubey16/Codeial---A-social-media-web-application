@@ -24,6 +24,7 @@ module.exports.home = async function(req, res){                     // aynchrono
     try {
         let posts = await Post.find({})                     // await the query
         .populate('user')                                   // user who is posting the post 
+        .sort('-createdAt')
         .populate({
             path: 'comments',
             populate: {
