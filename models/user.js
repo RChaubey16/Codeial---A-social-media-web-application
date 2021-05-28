@@ -18,11 +18,27 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String, 
         required: true
+    },
+    // avatar will contain the path of the file in string format
+    avatar: {
+        type: String
     }
     
 }, {
     timestamps: true
 });
+
+// Disk storage because we are using a pc for storage of files
+var storage = multer.diskStorage({
+    // will have the destination path
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname, '..', AVATAR_PATH));
+    },
+    // will have the filename with time appended in milliseconds
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now())
+    }
+  })
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
