@@ -6,7 +6,7 @@ const User = require("../models/user");
 
 let opts = {
   // Header has a list of key in which there is a key "authorization". Futher authorization also has a list of key in which there is a key called "Bearer" which will contain the JWT token
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
 
   // secret contains the key using which the encryption and decryption of token takes place
   secretOrKey: "codeial",
