@@ -13,14 +13,6 @@ module.exports.profile = function (req, res) {
 };
 
 module.exports.update = async function (req, res) {
-  // if (req.user.id == req.params.id){
-  //     User.findByIdAndUpdate(req.params.id, {name: req.body.name, email: req.body.email}, function(err, user){
-  //         return res.redirect('back');
-  //     });
-  // }else{
-  //     return res.status(401).send("Unauthorized");
-  // }
-
   if (req.user.id == req.params.id) {
     let user = await User.findById(req.params.id);
     User.uploadedAvatar(req, res, function (err) {
@@ -101,6 +93,7 @@ module.exports.create = function (req, res) {
       });
     } else {
       // if user is present
+      req.flash("success", "You have signed up, login to continue!");
       return res.redirect("back");
     }
   });
@@ -109,6 +102,7 @@ module.exports.create = function (req, res) {
 // sign-in and create a session for the users
 module.exports.createSession = function (req, res) {
   // creating a flash message
+
   req.flash("success", "Logged In Successfully");
   return res.redirect("/");
 };
