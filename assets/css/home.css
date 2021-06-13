@@ -1,9 +1,127 @@
+:root {
+  --lightgrey: #d3d3d3;
+  --white: #ffff;
+  --gray: #696969;
+  --blueviolet: #8a2be2; }
+
 #home-container {
   display: flex; }
   #home-container #feed-posts {
     width: 70%;
     padding: 10px; }
+    #home-container #feed-posts #new-post-form {
+      display: flex;
+      justify-content: center; }
+      #home-container #feed-posts #new-post-form #post-textarea {
+        width: 70%;
+        margin-top: 20px;
+        padding-top: 10px;
+        padding-left: 20px;
+        outline: 0;
+        border: none;
+        border-radius: 20px;
+        transition: all 150ms ease-in-out;
+        color: black;
+        background-color: #dcdcdc; }
+      #home-container #feed-posts #new-post-form #post-textarea:hover {
+        width: 75%;
+        background-color: whitesmoke; }
+      #home-container #feed-posts #new-post-form #post-btn {
+        margin-left: 10px;
+        align-self: flex-end;
+        height: 40px;
+        width: 80px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        background-color: var(--blueviolet);
+        transition: all 150ms ease-in-out; }
+      #home-container #feed-posts #new-post-form #post-btn:hover {
+        cursor: pointer;
+        background-color: var(--blueviolet);
+        opacity: 0.7; }
+    #home-container #feed-posts h4 {
+      font-size: 1.3rem;
+      text-align: center;
+      text-transform: uppercase; }
+    #home-container #feed-posts #posts-list-container {
+      max-height: 90vh;
+      overflow-x: hidden;
+      overflow-y: scroll; }
+      #home-container #feed-posts #posts-list-container ul {
+        list-style: none; }
+        #home-container #feed-posts #posts-list-container ul li {
+          padding: 8px;
+          margin-bottom: 14px;
+          font-size: 1.2rem;
+          background-color: var(--lightgrey);
+          border-radius: 25px; }
+          #home-container #feed-posts #posts-list-container ul li #post-delete-btn a {
+            position: relative;
+            right: -90%;
+            color: red;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 80ms ease-in-out; }
+          #home-container #feed-posts #posts-list-container ul li #post-delete-btn a:hover {
+            border-bottom: 2px solid red; }
+          #home-container #feed-posts #posts-list-container ul li #post-content {
+            padding-left: 0.7rem; }
+            #home-container #feed-posts #posts-list-container ul li #post-content small {
+              color: var(--gray); }
+          #home-container #feed-posts #posts-list-container ul li .post-comments form {
+            margin-bottom: 20px;
+            margin-left: 45px; }
+            #home-container #feed-posts #posts-list-container ul li .post-comments form #comment-textarea {
+              width: 40%;
+              height: 30px;
+              border: none;
+              border-radius: 10px;
+              padding-left: 15px; }
+            #home-container #feed-posts #posts-list-container ul li .post-comments form #comment-btn {
+              padding: 8px;
+              border: none;
+              border-radius: 10px;
+              color: white;
+              background-color: var(--blueviolet);
+              transition: all 150ms ease-in-out; }
+            #home-container #feed-posts #posts-list-container ul li .post-comments form #comment-btn:hover {
+              cursor: pointer;
+              background-color: var(--blueviolet);
+              opacity: 0.7; }
+          #home-container #feed-posts #posts-list-container ul li .post-comments-list ul li {
+            width: 600px;
+            padding-left: 25px;
+            background-color: var(--white); }
+            #home-container #feed-posts #posts-list-container ul li .post-comments-list ul li #comment-delete-btn a {
+              position: relative;
+              right: -90%;
+              color: red;
+              font-weight: 600;
+              text-decoration: none;
+              transition: all 80ms ease-in-out; }
+            #home-container #feed-posts #posts-list-container ul li .post-comments-list ul li #comment-delete-btn a:hover {
+              border-bottom: 2px solid red; }
+            #home-container #feed-posts #posts-list-container ul li .post-comments-list ul li small {
+              color: var(--gray); }
+  #home-container #posts-list-container::-webkit-scrollbar {
+    display: none; }
   #home-container #user-friends {
     width: 30%;
     padding: 10px;
-    border-left: 1px solid lightgrey; }
+    margin-left: 25px; }
+    #home-container #user-friends h4 {
+      font-size: 1.3rem;
+      text-align: center;
+      text-transform: uppercase; }
+    #home-container #user-friends p a {
+      padding: 13px;
+      color: black;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 140ms ease-in-out; }
+    #home-container #user-friends p a:hover {
+      color: var(--blueviolet);
+      background-color: var(--lightgrey);
+      border-radius: 15px; }
