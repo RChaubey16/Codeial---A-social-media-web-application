@@ -35,7 +35,7 @@ let renderTemplate = (data, relativePath) => {
 };
 
 // exporting the properties for further use
-modeule.exports = {
+module.exports = {
   transporter: transporter,
   renderTemplate: renderTemplate,
 };
