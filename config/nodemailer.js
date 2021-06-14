@@ -17,8 +17,8 @@ let transporter = nodemailer.createTransport({
 // to send HTML designed mails
 let renderTemplate = (data, relativePath) => {
   // data contains user info and relative path is from where the mail is sent (sender's email address)
-  let renderHTML;
-  ejs.render(
+  let mailHTML;
+  ejs.renderFile(
     path.join(__dirname, "../views/mailers", relativePath),
     data,
     function (err, template) {
@@ -27,11 +27,11 @@ let renderTemplate = (data, relativePath) => {
         return;
       }
 
-      renderHTML = template;
+      mailHTML = template;
     }
   );
 
-  return renderHTML;
+  return mailHTML;
 };
 
 // exporting the properties for further use
